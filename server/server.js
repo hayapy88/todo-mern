@@ -1,17 +1,15 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
-
 require("dotenv").config();
 const connectDB = require("./config/db");
+const routes = require("./routes/routes");
 
 const app = express();
-const routes = require("./routes/routes");
 
 app.use(cors());
 app.use("/api/v1/todo", routes);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 
 async function startServer() {
   try {
