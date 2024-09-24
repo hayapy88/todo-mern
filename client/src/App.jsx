@@ -18,7 +18,7 @@ function App() {
   }, []);
   return (
     <div>
-      <h1>MERN ToDo</h1>
+      <h1>MERN ToDo App</h1>
       {message && <p>{message}</p>}
     </div>
   );
