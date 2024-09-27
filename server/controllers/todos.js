@@ -17,7 +17,7 @@ const getAllTodos = async (req, res) => {
     });
   }
 };
-const postTodo = async (req, res) => {
+const createTodo = async (req, res) => {
   try {
     const createTodo = await Todo.create(req.body);
     res.status(201).json({
@@ -118,7 +118,7 @@ const deleteTodo = async (req, res) => {
 
 module.exports = {
   getAllTodos,
-  postTodo,
+  createTodo,
   getOneTodo,
   updateTodo,
   deleteTodo,
