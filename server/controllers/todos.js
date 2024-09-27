@@ -1,5 +1,4 @@
 const Todo = require("../models/Todo");
-const { all } = require("../routes/routes");
 
 const getAllTodos = async (req, res) => {
   try {
