@@ -17,7 +17,7 @@ function App() {
     fetchTodos();
   }, []);
   return (
-    <div>
+    <div className="text-center">
       <h1>MERN ToDo App</h1>
       {message && <p>{message}</p>}
     </div>
