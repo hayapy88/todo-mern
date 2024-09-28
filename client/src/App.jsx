@@ -4,7 +4,7 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    async function getAllTodos() {
+    async function fetchTodos() {
       try {
         const res = await fetch("/api/v1/todo");
         const todos = await res.json();
@@ -14,7 +14,7 @@ function App() {
         console.log("Error fetching data: ", error);
       }
     }
-    getAllTodos();
+    fetchTodos();
   }, []);
   return (
     <div>
