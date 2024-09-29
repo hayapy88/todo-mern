@@ -6,7 +6,7 @@ const getAllTodos = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "All ToDos are retrieved successfully",
-      todo: allTodos,
+      todos: allTodos,
     });
   } catch (error) {
     res.status(500).json({
@@ -22,7 +22,7 @@ const createTodo = async (req, res) => {
     res.status(201).json({
       status: "success",
       message: "A ToDo was created successfully",
-      todo: createTodo,
+      todos: createTodo,
     });
   } catch (error) {
     res.status(500).json({
@@ -46,7 +46,7 @@ const getOneTodo = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "A ToDo was successfully retrieved",
-      todo: retrievedOneTodo,
+      todos: retrievedOneTodo,
     });
   } catch (error) {
     res.status(500).json({
@@ -78,7 +78,7 @@ const updateTodo = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "A ToDo was successfully updated",
-      todo: retrievedOneTodo,
+      todos: retrievedOneTodo,
     });
   } catch (error) {
     res.status(500).json({
@@ -104,7 +104,7 @@ const deleteTodo = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "A ToDo was successfully deleted",
-      todo: retrievedOneTodo,
+      todos: retrievedOneTodo,
     });
   } catch (error) {
     res.status(500).json({
