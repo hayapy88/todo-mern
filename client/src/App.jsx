@@ -25,24 +25,34 @@ function App() {
     fetchTodos();
   }, []);
   return (
-    <div className="text-center">
-      <h1>MERN ToDo App</h1>
-      <input type="text" className="border" />
-      <button type="submit" className="border" onClick={createTodo}>
-        Create
-      </button>
-      <div>
-        {todos.map((todo) => {
-          return (
-            <div key={todo._id}>
-              <input
-                type="checkbox"
-                className="relative before:content-[''] before:absolute before:-left-7 before:-top-4 before:w-6 before:h-6 before:rounded-full before:border before:border-gray-900 before:bg-white before:cursor-pointer before:checked:bg-blue-500 before:checked:border-transparent before:checked:border-0 before:checked:text-white after:checked:absolute after:checked:-left-6 after:checked:-top-2 after:checked:w-4 after:checked:h-2 after:checked:border-l-2 after:checked:border-b-2 after:checked:border-white after:checked:-rotate-45"
-              />
-              {todo.title}
-            </div>
-          );
-        })}
+    <div className="page">
+      <div className="page__header">
+        <h1 className="page__title">MERN ToDo App</h1>
+      </div>
+      <div className="page__content">
+        <div className="create">
+          <form class="create__form">
+            <input type="text" className="create__input" />
+            <button
+              type="submit"
+              className="create__button"
+              onClick={createTodo}
+            >
+              Create
+            </button>
+          </form>
+        </div>
+
+        <div className="tasklist">
+          {todos.map((todo) => {
+            return (
+              <div key={todo._id} className="tasklist__item">
+                <input type="checkbox" className="tasklist__checkbox" />
+                <p className="tasklist__name">{todo.title}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
