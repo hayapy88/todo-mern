@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "../src/assets/scss/style.scss";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -26,12 +27,12 @@ function App() {
   }, []);
   return (
     <div className="page">
-      <div className="page__header">
-        <h1 className="page__title">MERN ToDo App</h1>
+      <div className="header">
+        <h1 className="header__title">MERN ToDo App</h1>
       </div>
-      <div className="page__content">
+      <div className="content">
         <div className="create">
-          <form class="create__form">
+          <form className="create__form">
             <input type="text" className="create__input" />
             <button
               type="submit"

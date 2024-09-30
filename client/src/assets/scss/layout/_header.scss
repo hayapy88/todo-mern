@@ -1,0 +1,7 @@
+.header {
+  @apply relative bg-blue-500 text-white h-[200px] p-4;
+
+  &__title {
+    @apply absolute top-[calc(50%-2em)] left-1/2 -translate-y-1/2 -translate-x-1/2 text-2xl font-bold;
+  }
+}

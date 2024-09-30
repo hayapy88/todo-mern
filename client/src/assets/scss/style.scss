@@ -1,0 +1,29 @@
+// Abstracts
+@use "abstracts/variables" as vars;
+// @use "abstracts/mixins";
+
+// Base styles
+// @use "base/reset";
+// @use "base/typography";
+
+// Layout
+@use "layout/layout";
+@use "layout/header";
+@use "layout/contents";
+// @use "layout/footer";
+
+// Components
+// @use "components/button";
+// @use "components/card";
+
+// Pages
+@use "pages/home";
+// @use "pages/about";
+
+// Themes
+// @use "themes/dark";
+// @use "themes/light";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

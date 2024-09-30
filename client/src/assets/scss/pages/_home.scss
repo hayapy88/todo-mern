@@ -1,0 +1,34 @@
+.create {
+  @apply bg-white p-1 rounded-lg;
+
+  &__form {
+    @apply flex;
+  }
+
+  &__input {
+    @apply w-full p-2 border-gray-200 rounded;
+  }
+
+  &__button {
+    @apply ml-2 px-4 py-2 text-white bg-blue-500 rounded;
+  }
+}
+
+.tasklist {
+  @apply mt-4 p-4 bg-white rounded-lg;
+
+  &__item {
+    @apply flex items-center py-4 pr-4 pl-8 border-b border-gray-200;
+  }
+
+  &__checkbox {
+    @apply relative appearance-none cursor-pointer
+    before:content-[''] before:absolute before:-left-7 before:-top-3
+    before:w-6 before:h-6
+    before:rounded-full before:border before:border-gray-500 before:bg-white
+    before:checked:bg-blue-500 before:checked:border-transparent before:checked:border-0
+    after:checked:absolute after:checked:-left-6 after:checked:-top-1.5
+    after:checked:w-4 after:checked:h-2
+    after:checked:border-l-2 after:checked:border-b-2 after:checked:border-white after:checked:-rotate-45;
+  }
+}
