@@ -18,7 +18,19 @@
   @apply mt-4 p-4 bg-white rounded-lg;
 
   &__item {
-    @apply flex items-center py-4 pr-4 pl-8 border-b border-gray-200;
+    @apply flex items-center justify-between py-4 pr-0 pl-8 border-b border-gray-200;
+  }
+
+  &__left {
+    @apply flex items-center;
+  }
+
+  &__right {
+    @apply flex gap-3;
+  }
+
+  &__action svg {
+    @apply text-gray-700 cursor-pointer;
   }
 
   &__checkbox {
