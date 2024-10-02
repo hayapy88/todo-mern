@@ -22,7 +22,7 @@ function App() {
     }
   }
 
-  async function createTodo(e) {
+  async function handleCreateTodo(e) {
     e.preventDefault();
     if (!newTodoTitle) {
       return;
@@ -50,7 +50,7 @@ function App() {
       </div>
       <div className="content">
         <div className="create">
-          <form className="create__form" onSubmit={createTodo}>
+          <form className="create__form" onSubmit={handleCreateTodo}>
             <input
               type="text"
               id="createInput"
