@@ -34,6 +34,16 @@ function App() {
     }
   }
 
+  async function handleDeleteTodo(todo) {
+    try {
+      const response = await axios.delete(`/api/v1/todo/${todo._id}`);
+      console.log(response.data);
+      fetchTodos();
+    } catch (error) {
+      console.log("Error deleting todo: ", error);
+    }
+  }
+
   async function handleCreateTodo(e) {
     e.preventDefault();
     if (!newTodoTitle) {
@@ -98,7 +108,10 @@ function App() {
                   <button className="tasklist__action">
                     <FontAwesomeIcon icon={faEdit} size="lg" />
                   </button>
-                  <button className="tasklist__action">
+                  <button
+                    className="tasklist__action"
+                    onClick={() => handleDeleteTodo(todo)}
+                  >
                     <FontAwesomeIcon icon={faTrash} size="lg" />
                   </button>
                 </div>
