@@ -22,6 +22,18 @@ function App() {
     }
   }
 
+  async function handleCompletedToggle(todo) {
+    try {
+      const response = await axios.put(`/api/v1/todo/${todo._id}`, {
+        completed: !todo.completed,
+      });
+      console.log(response.data);
+      fetchTodos();
+    } catch (error) {
+      console.log("Error updating completed: ", error);
+    }
+  }
+
   async function handleCreateTodo(e) {
     e.preventDefault();
     if (!newTodoTitle) {
@@ -76,6 +88,9 @@ function App() {
                     type="checkbox"
                     className="tasklist__checkbox"
                     checked={todo.completed}
+                    onChange={() => {
+                      handleCompletedToggle(todo);
+                    }}
                   />
                   <p className="tasklist__name">{todo.title}</p>
                 </div>
