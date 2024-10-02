@@ -7,24 +7,40 @@ import "../src/assets/scss/style.scss";
 function App() {
   const [message, setMessage] = useState("");
   const [todos, setTodos] = useState([]);
+  const [newTodoTitle, setNewTodoTitle] = useState("");
 
-  function createTodo() {
-    console.log("Create todo");
+  async function fetchTodos() {
+    try {
+      const response = await axios.get("/api/v1/todo");
+      const todos = response.data;
+      console.log(todos);
+
+      setMessage(todos.message);
+      setTodos(todos.todos);
+    } catch (error) {
+      console.log("Error fetching data: ", error);
+    }
+  }
+
+  async function createTodo(e) {
+    e.preventDefault();
+    if (!newTodoTitle) {
+      return;
+    }
+
+    try {
+      const response = await axios.post("/api/v1/todo", {
+        title: newTodoTitle,
+      });
+      console.log(response.data);
+      setNewTodoTitle("");
+      fetchTodos();
+    } catch (error) {
+      console.log("Error creating todo: ", error);
+    }
   }
 
   useEffect(() => {
-    async function fetchTodos() {
-      try {
-        const response = await axios.get("/api/v1/todo");
-        const todos = response.data;
-        console.log(todos);
-
-        setMessage(todos.message);
-        setTodos(todos.todos);
-      } catch (error) {
-        console.log("Error fetching data: ", error);
-      }
-    }
     fetchTodos();
   }, []);
   return (
@@ -34,13 +50,18 @@ function App() {
       </div>
       <div className="content">
         <div className="create">
-          <form className="create__form">
-            <input type="text" className="create__input" />
-            <button
-              type="submit"
-              className="create__button"
-              onClick={createTodo}
-            >
+          <form className="create__form" onSubmit={createTodo}>
+            <input
+              type="text"
+              id="createInput"
+              className="create__input"
+              placeholder="Create a New ToDo..."
+              value={newTodoTitle}
+              onChange={(e) => {
+                setNewTodoTitle(e.target.value);
+              }}
+            />
+            <button type="submit" className="create__button">
               Create
             </button>
           </form>
@@ -51,7 +72,11 @@ function App() {
             return (
               <div key={todo._id} className="tasklist__item">
                 <div className="tasklist__left">
-                  <input type="checkbox" className="tasklist__checkbox" />
+                  <input
+                    type="checkbox"
+                    className="tasklist__checkbox"
+                    checked={todo.completed}
+                  />
                   <p className="tasklist__name">{todo.title}</p>
                 </div>
                 <div className="tasklist__right">
