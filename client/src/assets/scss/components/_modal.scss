@@ -1,0 +1,44 @@
+.modal {
+  @apply fixed inset-0 z-10;
+
+  &__overlay {
+    @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+  }
+
+  &__background {
+    @apply flex items-center justify-center min-h-screen;
+  }
+
+  &__wrapper {
+    @apply min-w-[310px] xs:min-w-[360px] sm:min-w-[450px] md:min-w-[600px]
+    bg-white rounded-lg shadow-xl transform transition-all;
+  }
+
+  &__upper {
+    @apply px-4 py-5 sm:p-6;
+  }
+
+  &__title {
+    @apply text-2xl font-bold text-gray-700;
+  }
+
+  &__item {
+    @apply flex items-center mt-3;
+  }
+
+  &__item-label {
+    @apply block text-lg font-medium text-gray-700;
+  }
+
+  &__todo-title {
+    @apply w-full ml-2 py-1 px-2 border border-gray-300 rounded-md;
+  }
+
+  &__todo-completed {
+    @apply h-5 w-5 ml-2 cursor-pointer;
+  }
+
+  &__lower {
+    @apply flex sm:justify-around gap-4 px-4 sm:px-6 pb-6;
+  }
+}

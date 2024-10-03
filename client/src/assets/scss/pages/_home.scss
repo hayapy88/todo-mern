@@ -10,7 +10,8 @@
   }
 
   &__button {
-    @apply ml-2 px-4 py-2 text-white bg-blue-500 rounded;
+    @apply ml-2;
+    @apply button;
   }
 }
 
@@ -22,11 +23,24 @@
   }
 
   &__left {
-    @apply flex items-center;
+    @apply flex items-center w-[calc(100%-60px)];
+  }
+
+  &__title {
+    @apply w-full text-start;
+
+    &:disabled {
+      @apply bg-white;
+    }
   }
 
   &__right {
-    @apply flex gap-3;
+    @apply flex justify-end gap-3 w-[60px];
+  }
+
+  &__save {
+    @apply hidden;
+    @apply button--small;
   }
 
   &__action svg {

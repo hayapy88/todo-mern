@@ -58,7 +58,7 @@ const getOneTodo = async (req, res) => {
 };
 const updateTodo = async (req, res) => {
   try {
-    const retrievedOneTodo = await Todo.findOneAndUpdate(
+    const updatedOneTodo = await Todo.findOneAndUpdate(
       {
         _id: req.params.id,
       },
@@ -68,7 +68,7 @@ const updateTodo = async (req, res) => {
       }
     );
 
-    if (!retrievedOneTodo) {
+    if (!updatedOneTodo) {
       return res.status(404).json({
         status: "failed",
         message: `_id: ${req.params.id} is not found`,
@@ -78,7 +78,7 @@ const updateTodo = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "A ToDo was successfully updated",
-      todos: retrievedOneTodo,
+      todos: updatedOneTodo,
     });
   } catch (error) {
     res.status(500).json({
@@ -90,11 +90,11 @@ const updateTodo = async (req, res) => {
 };
 const deleteTodo = async (req, res) => {
   try {
-    const retrievedOneTodo = await Todo.findOneAndDelete({
+    const deletedOneTodo = await Todo.findOneAndDelete({
       _id: req.params.id,
     });
 
-    if (!retrievedOneTodo) {
+    if (!deletedOneTodo) {
       return res.status(404).json({
         status: "failed",
         message: `_id: ${req.params.id} is not found`,
@@ -104,7 +104,7 @@ const deleteTodo = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "A ToDo was successfully deleted",
-      todos: retrievedOneTodo,
+      todos: deletedOneTodo,
     });
   } catch (error) {
     res.status(500).json({

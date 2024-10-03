@@ -6,15 +6,15 @@
 // @use "base/reset";
 // @use "base/typography";
 
+// Components
+@use "components/button";
+@use "components/modal";
+
 // Layout
 @use "layout/layout";
 @use "layout/header";
 @use "layout/contents";
 // @use "layout/footer";
-
-// Components
-// @use "components/button";
-// @use "components/card";
 
 // Pages
 @use "pages/home";
