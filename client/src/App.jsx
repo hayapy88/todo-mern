@@ -178,7 +178,7 @@ function App() {
           setIsModalOpen={setIsModalOpen}
           editedTodo={editedTodo}
           setEditedTodo={setEditedTodo}
-          cancelEdit={cancelEdit}
+          onClose={() => setIsModalOpen(false)}
           submitEditedTodo={submitEditedTodo}
         />
       )}
