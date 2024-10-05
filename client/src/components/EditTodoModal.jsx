@@ -1,6 +1,11 @@
 import React from "react";
 
-function ModalEdit({ editedTodo, setEditedTodo, onClose, submitEditedTodo }) {
+function ModalEdit({
+  editedTodo,
+  setEditedTodo,
+  cancelEdit,
+  submitEditedTodo,
+}) {
   return (
     <div className="modal">
       <div className="modal__overlay" aria-hidden="true"></div>
@@ -48,7 +53,7 @@ function ModalEdit({ editedTodo, setEditedTodo, onClose, submitEditedTodo }) {
           <div className="modal__lower">
             <div className="button__group">
               <button
-                onClick={onClose}
+                onClick={cancelEdit}
                 className="button button--wide button--gray"
               >
                 Cancel
