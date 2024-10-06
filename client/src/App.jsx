@@ -3,6 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "../src/assets/scss/style.scss";
+import Header from "./components/Header";
 import Create from "./components/Create";
 import TaskList from "./components/TaskList";
 import EditTodoModal from "./components/EditTodoModal";
@@ -118,9 +119,7 @@ function App() {
 
   return (
     <div className="page">
-      <div className="header">
-        <h1 className="header__title">MERN ToDo App</h1>
-      </div>
+      <Header />
       <div className="content">
         <Create
           newTodoTitle={newTodoTitle}
