@@ -173,7 +173,7 @@ function App() {
           })}
         </div>
       </div>
-      {isModalOpen && (
+      {isModalOpen && editedTodo && (
         <EditTodoModal
           setIsModalOpen={setIsModalOpen}
           editedTodo={editedTodo}
