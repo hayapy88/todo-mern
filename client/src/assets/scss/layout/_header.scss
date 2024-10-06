@@ -1,5 +1,14 @@
 .header {
-  @apply relative bg-blue-500 text-white h-[200px] p-4;
+  @apply relative bg-blue-500 text-white h-[200px] p-4 bg-center;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 255, 0.5),
+      rgba(128, 0, 128, 0.5)
+    ),
+    url("/images/bg_code.jpg");
+  background-size: cover;
+  background-position: center;
 
   &__title {
     @apply absolute top-[calc(50%-2em)] left-1/2 -translate-y-1/2 -translate-x-1/2 text-2xl font-bold;
