@@ -27,7 +27,7 @@
   }
 
   &__title {
-    @apply w-full text-start;
+    @apply w-full text-start break-words;
 
     &:disabled {
       @apply bg-white;
