@@ -8,7 +8,7 @@ const Create = ({ newTodoTitle, setNewTodoTitle, handleCreateTodo }) => {
           type="text"
           id="createInput"
           className="create__input"
-          placeholder="Create a New ToDo..."
+          placeholder="Create a New Todo..."
           value={newTodoTitle}
           onChange={(e) => {
             setNewTodoTitle(e.target.value);

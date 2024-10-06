@@ -12,7 +12,7 @@ function ModalEdit({
       <div className="modal__background">
         <div className="modal__wrapper">
           <div className="modal__upper">
-            <h3 className="modal__title">Edit ToDo</h3>
+            <h3 className="modal__title">Edit Todo</h3>
             <div className="modal__item">
               <label htmlFor="title" className="modal__item-label">
                 Title
