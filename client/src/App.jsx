@@ -3,6 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "../src/assets/scss/style.scss";
+import Create from "./components/Create";
 import TaskList from "./components/TaskList";
 import EditTodoModal from "./components/EditTodoModal";
 
@@ -121,24 +122,11 @@ function App() {
         <h1 className="header__title">MERN ToDo App</h1>
       </div>
       <div className="content">
-        <div className="create">
-          <form className="create__form" onSubmit={handleCreateTodo}>
-            <input
-              type="text"
-              id="createInput"
-              className="create__input"
-              placeholder="Create a New ToDo..."
-              value={newTodoTitle}
-              onChange={(e) => {
-                setNewTodoTitle(e.target.value);
-              }}
-            />
-            <button type="submit" className="create__button">
-              Create
-            </button>
-          </form>
-        </div>
-
+        <Create
+          newTodoTitle={newTodoTitle}
+          setNewTodoTitle={setNewTodoTitle}
+          handleCreateTodo={handleCreateTodo}
+        />
         <TaskList
           todos={todos}
           handleCompletedToggle={handleCompletedToggle}
