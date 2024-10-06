@@ -1,0 +1,16 @@
+.message {
+  @apply absolute left-1/2 -top-40 -translate-x-1/2 z-10 inline-block
+  p-4 bg-white border border-gray-300 rounded-lg shadow-md
+  transition-all duration-500 ease-in-out;
+
+  &.active {
+    @apply top-4;
+  }
+
+  &__green {
+    @apply bg-green-500 text-white border-green-600;
+  }
+  &__red {
+    @apply bg-red-500 text-white border-red-600;
+  }
+}

@@ -10,10 +10,30 @@ import EditTodoModal from "./components/EditTodoModal";
 
 function App() {
   const [message, setMessage] = useState("");
+  const [isMessage, setIsMessage] = useState(false);
+  const [messageColor, setMessageColor] = useState("green");
   const [todos, setTodos] = useState([]);
   const [newTodoTitle, setNewTodoTitle] = useState("");
   const [editedTodo, setEditedTodo] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Common function to handle API responses
+  function handleResponse(response) {
+    const todos = response.data;
+    console.log(todos);
+    displayMessage(todos.message, todos.status === "success" ? "green" : "red");
+  }
+
+  // Display message
+  function displayMessage(message, color) {
+    setMessage(message);
+    setMessageColor(color);
+    setIsMessage(true);
+    setTimeout(() => {
+      setIsMessage(false);
+      setMessageColor("green");
+    }, 3000);
+  }
 
   // Fetch all todos
   async function fetchTodos() {
@@ -21,8 +41,6 @@ function App() {
       const response = await axios.get("/api/v1/todo");
       const todos = response.data;
       console.log(todos);
-
-      setMessage(todos.message);
       setTodos(todos.todos);
     } catch (error) {
       console.log("Error fetching data: ", error);
@@ -33,6 +51,7 @@ function App() {
   async function handleCreateTodo(e) {
     e.preventDefault();
     if (!newTodoTitle) {
+      displayMessage("Please enter a title", "red");
       return;
     }
 
@@ -40,7 +59,7 @@ function App() {
       const response = await axios.post("/api/v1/todo", {
         title: newTodoTitle,
       });
-      console.log(response.data);
+      handleResponse(response);
       setNewTodoTitle("");
       fetchTodos();
     } catch (error) {
@@ -54,7 +73,7 @@ function App() {
       const response = await axios.put(`/api/v1/todo/${todo._id}`, {
         completed: !todo.completed,
       });
-      console.log(response.data);
+      handleResponse(response);
       fetchTodos();
     } catch (error) {
       console.log("Error updating completed: ", error);
@@ -93,7 +112,7 @@ function App() {
         `/api/v1/todo/${editedTodo._id}`,
         editedTodo
       );
-      console.log(response.data);
+      handleResponse(response);
       cancelEdit();
       fetchTodos();
     } catch (error) {
@@ -105,7 +124,7 @@ function App() {
   async function handleDeleteTodo(todo) {
     try {
       const response = await axios.delete(`/api/v1/todo/${todo._id}`);
-      console.log(response.data);
+      handleResponse(response);
       fetchTodos();
     } catch (error) {
       console.log("Error deleting todo: ", error);
@@ -119,6 +138,13 @@ function App() {
 
   return (
     <div className="page">
+      <div
+        className={`message ${
+          isMessage ? "active" : ""
+        } message__${messageColor}`}
+      >
+        <p>{message}</p>
+      </div>
       <Header />
       <div className="content">
         <Create
