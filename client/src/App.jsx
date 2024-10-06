@@ -9,7 +9,7 @@ function App() {
   const [message, setMessage] = useState("");
   const [todos, setTodos] = useState([]);
   const [newTodoTitle, setNewTodoTitle] = useState("");
-  const [editedTodo, setEditedTodo] = useState({});
+  const [editedTodo, setEditedTodo] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Fetch all todos
