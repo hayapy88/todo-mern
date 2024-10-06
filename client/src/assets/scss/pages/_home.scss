@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as var;
+
 .create {
   @apply bg-white p-1 rounded-lg;
 
@@ -11,7 +13,6 @@
 
   &__button {
     @apply ml-2;
-    @apply button;
   }
 }
 
@@ -43,18 +44,53 @@
     @apply button--small;
   }
 
-  &__action svg {
+  &__action {
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &__action-icon {
     @apply text-gray-700 cursor-pointer;
+
+    &--edit {
+      .tasklist__action:hover & {
+        color: var.$color-main;
+        transition: color 0.2s;
+      }
+    }
+    &--delete {
+      .tasklist__action:hover & {
+        @apply text-red-500;
+        transition: color 0.2s;
+      }
+    }
   }
 
   &__checkbox {
     @apply relative appearance-none cursor-pointer
     before:content-[''] before:absolute before:-left-7 before:-top-3
     before:w-6 before:h-6
-    before:rounded-full before:border before:border-gray-500 before:bg-white
-    before:checked:bg-blue-500 before:checked:border-transparent before:checked:border-0
-    after:checked:absolute after:checked:-left-6 after:checked:-top-1.5
+    before:rounded-full before:border before:border-gray-500
+    before:checked:border-transparent before:checked:border-0
+    after:checked:content-[''] after:checked:absolute after:checked:-left-6 after:checked:-top-1.5
     after:checked:w-4 after:checked:h-2
     after:checked:border-l-2 after:checked:border-b-2 after:checked:border-white after:checked:-rotate-45;
+
+    &:hover:before {
+      background-image: var.$color-main-gradient;
+      opacity: 0.3;
+    }
+    &:hover:after {
+      @apply content-[''] absolute -left-6 -top-1.5
+      w-4 h-2
+      border-l-2 border-b-2 border-white -rotate-45;
+      opacity: 0.7;
+    }
+    &:checked:before {
+      background-image: var.$color-main-gradient;
+      opacity: 1;
+    }
   }
 }

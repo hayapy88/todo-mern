@@ -2,14 +2,30 @@
 
 .button {
   @apply px-4 py-2 text-white rounded-md;
-  background-color: var.$main-color;
+  background-image: var.$color-main;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--gradient {
+    background-image: var.$color-main-gradient-3c;
+    background-size: 200%;
+    background-position: 0 0;
+    transition: background-position 0.3s ease-in-out;
+
+    &:hover {
+      background-position: 100% 0;
+      opacity: 1;
+    }
+  }
 
   &--small {
     @apply px-2;
   }
 
   &--gray {
-    background-color: var.$cancel-color;
+    background-image: var.$color-cancel-gradient-3c;
   }
 
   &--wide {

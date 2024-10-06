@@ -35,13 +35,21 @@ const TaskList = ({
                     className="tasklist__action tasklist__action--edit"
                     onClick={() => handleEditTodo(todo)}
                   >
-                    <FontAwesomeIcon icon={faEdit} size="lg" />
+                    <FontAwesomeIcon
+                      icon={faEdit}
+                      size="lg"
+                      className="tasklist__action-icon tasklist__action-icon--edit"
+                    />
                   </button>
                   <button
                     className="tasklist__action tasklist__action--delete"
                     onClick={() => handleDeleteTodo(todo)}
                   >
-                    <FontAwesomeIcon icon={faTrash} size="lg" />
+                    <FontAwesomeIcon
+                      icon={faTrash}
+                      size="lg"
+                      className="tasklist__action-icon tasklist__action-icon--delete"
+                    />
                   </button>
                 </div>
               </div>

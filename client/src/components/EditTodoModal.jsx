@@ -54,13 +54,13 @@ function ModalEdit({
             <div className="button__group">
               <button
                 onClick={cancelEdit}
-                className="button button--wide button--gray"
+                className="button button--gradient button--wide button--gray"
               >
                 Cancel
               </button>
               <button
                 onClick={submitEditedTodo}
-                className="button button--wide"
+                className="button button--gradient button--wide"
               >
                 Save
               </button>

@@ -14,7 +14,10 @@ const Create = ({ newTodoTitle, setNewTodoTitle, handleCreateTodo }) => {
             setNewTodoTitle(e.target.value);
           }}
         />
-        <button type="submit" className="create__button">
+        <button
+          type="submit"
+          className="create__button button button--gradient"
+        >
           Create
         </button>
       </form>
