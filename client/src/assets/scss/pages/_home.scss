@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as var;
 
 .create {
-  @apply bg-white p-1 rounded-lg;
+  @apply bg-white p-1 shadow-md rounded-lg;
 
   &__form {
     @apply flex;
@@ -17,7 +17,7 @@
 }
 
 .tasklist {
-  @apply mt-4 p-4 text-start bg-white rounded-lg;
+  @apply mt-4 p-4 text-start bg-white shadow-md rounded-lg;
 
   &__item {
     @apply flex items-center justify-between py-4 pr-0 pl-8 border-b border-gray-200;
