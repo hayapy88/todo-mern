@@ -16,7 +16,7 @@
 }
 
 .tasklist {
-  @apply mt-4 p-4 bg-white rounded-lg;
+  @apply mt-4 p-4 text-start bg-white rounded-lg;
 
   &__item {
     @apply flex items-center justify-between py-4 pr-0 pl-8 border-b border-gray-200;
