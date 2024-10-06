@@ -52,7 +52,7 @@
   }
 
   &__action-icon {
-    @apply text-gray-700 cursor-pointer;
+    @apply text-gray-600 cursor-pointer;
 
     &--edit {
       .tasklist__action:hover & {
