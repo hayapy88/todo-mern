@@ -62,7 +62,7 @@ const TaskList = ({
                 : `${remainingTasks} ${
                     remainingTasks === 1 ? "task " : "tasks "
                   }
-                remaining 🧑‍💻`}
+                remaining 📝`}
             </p>
           </div>
         </>
