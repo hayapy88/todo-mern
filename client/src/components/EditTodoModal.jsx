@@ -8,7 +8,11 @@ function ModalEdit({
 }) {
   return (
     <div className="modal">
-      <div className="modal__overlay" aria-hidden="true"></div>
+      <div
+        className="modal__overlay"
+        aria-hidden="true"
+        onClick={cancelEdit}
+      ></div>
       <div className="modal__background">
         <div className="modal__wrapper">
           <div className="modal__upper">
