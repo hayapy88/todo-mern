@@ -10,10 +10,11 @@ function App() {
   const [message, setMessage] = useState("");
   const [isMessage, setIsMessage] = useState(false);
   const [messageColor, setMessageColor] = useState("green");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(null);
   const [newTodoTitle, setNewTodoTitle] = useState("");
   const [editedTodo, setEditedTodo] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Common function to handle API responses
   function handleResponse(response) {
@@ -40,8 +41,10 @@ function App() {
       const todos = response.data;
       console.log(todos);
       setTodos(todos.todos);
+      setIsLoading(false);
     } catch (error) {
       console.log("Error fetching data: ", error);
+      setIsLoading(false);
     }
   }
 
@@ -131,6 +134,7 @@ function App() {
 
   // Fetch all todos on initial render
   useEffect(() => {
+    setIsLoading(true);
     fetchTodos();
   }, []);
 
@@ -150,7 +154,9 @@ function App() {
           setNewTodoTitle={setNewTodoTitle}
           handleCreateTodo={handleCreateTodo}
         />
+
         <TaskList
+          isLoading={isLoading}
           todos={todos}
           handleCompletedToggle={handleCompletedToggle}
           handleEditTodo={handleEditTodo}
