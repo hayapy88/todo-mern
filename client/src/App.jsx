@@ -12,6 +12,7 @@ function App() {
   const [messageColor, setMessageColor] = useState("green");
   const [todos, setTodos] = useState(null);
   const [newTodoTitle, setNewTodoTitle] = useState("");
+  const [originalTodo, setOriginalTodo] = useState(null);
   const [editedTodo, setEditedTodo] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -84,6 +85,11 @@ function App() {
   // Edit a todo
   async function handleEditTodo(todo) {
     console.log("Editing todo: ", todo);
+    setOriginalTodo({
+      _id: todo._id,
+      title: todo.title,
+      completed: todo.completed,
+    });
     setEditedTodo({
       _id: todo._id,
       title: todo.title,
@@ -103,11 +109,11 @@ function App() {
   async function submitEditedTodo(todo) {
     try {
       if (
-        editedTodo._id === todo._id &&
-        editedTodo.title === todo.title &&
-        editedTodo.completed === todo.completed
+        editedTodo._id === originalTodo._id &&
+        editedTodo.title === originalTodo.title &&
+        editedTodo.completed === originalTodo.completed
       ) {
-        return;
+        return displayMessage("No changes made", "red");
       }
       const response = await axios.put(
         `/api/v1/todo/${editedTodo._id}`,
