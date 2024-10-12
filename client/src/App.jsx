@@ -84,7 +84,6 @@ function App() {
 
   // Edit a todo
   async function handleEditTodo(todo) {
-    console.log("Editing todo: ", todo);
     setOriginalTodo({
       _id: todo._id,
       title: todo.title,
@@ -97,16 +96,13 @@ function App() {
     });
     setIsModalOpen(true);
   }
-  useEffect(() => {
-    console.log("Edited todo: ", editedTodo);
-  }, [editedTodo]);
 
   function cancelEdit() {
     setEditedTodo({});
     setIsModalOpen(false);
   }
 
-  async function submitEditedTodo(todo) {
+  async function submitEditedTodo() {
     try {
       if (
         editedTodo._id === originalTodo._id &&
