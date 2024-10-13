@@ -28,7 +28,13 @@ const TaskList = ({
                   handleCompletedToggle(todo);
                 }}
               />
-              <p className="tasklist__title">{todo.title}</p>
+              <p
+                className={`tasklist__title ${
+                  todo.completed ? "tasklist__title--completed" : ""
+                }`}
+              >
+                {todo.title}
+              </p>
             </div>
             <div className="tasklist__right">
               <button

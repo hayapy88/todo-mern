@@ -30,8 +30,8 @@
   &__title {
     @apply w-[calc(100%-1em)] ml-2 mr-2 text-start break-words;
 
-    &:disabled {
-      @apply bg-white;
+    &--completed {
+      @apply line-through text-gray-400;
     }
   }
 
