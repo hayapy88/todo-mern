@@ -11,9 +11,9 @@
   background-position: center;
 
   &__title {
-    @apply absolute top-[calc(50%-2em)] left-1/2 -translate-y-1/2 -translate-x-1/2 text-2xl font-bold;
+    @apply absolute top-[calc(50%-2em)] left-1/2 -translate-y-1/2 -translate-x-1/2 w-full text-2xl font-bold;
   }
   &__subtitle {
-    @apply absolute top-[calc(50%-1.3em)] left-1/2 -translate-y-1/2 -translate-x-1/2 text-base;
+    @apply absolute top-[calc(50%-1.3em)] left-1/2 -translate-y-1/2 -translate-x-1/2 w-full text-base;
   }
 }
