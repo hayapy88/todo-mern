@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MERN Todo App
 
-## Available Scripts
+# Description
 
-In the project directory, you can run:
+A full-stack Todo application built with the MERN stack (MongoDB, Express, React, Node.js). The app allows users to add, update, and delete tasks. It is deployed on Render for both frontend and backend.
 
-### `npm start`
+# Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://todo-mern-client-lkgq.onrender.com/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Features
 
-### `npm test`
+- Add, update, and delete tasks
+- Responsive design
+- Real-time updates without page reloads
+- Data persistence using MongoDB
+- Stylish CSS implementation using gradients
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Tech Stack
 
-### `npm run build`
+- Frontend: React (Create React App), Tailwind CSS, SCSS, BEM Methodology
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Deployment: Render (Frontend and Backend)
+- Version Control: Git, GitHub
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git clone https://github.com/hayapy88/todo-mern
+```
 
-### `npm run eject`
+2. Navigate to the project directory and install dependencies for both the frontend and backend:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+cd client
+npm install
+cd ../server
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Create a .env file in the server root directory with the following environment variables:
+   MONGO_URI=MongoDB-connection-string
+   PORT=4000(or-any-port-you-prefer)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Start the frontend and backend:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+cd client
+npm start
+cd ../server
+npm run dev
+```
 
-## Learn More
+Frontend: Open http://localhost:3000 in your browser to view the frontend.
+Backend: The backend will be running on http://localhost:4000 (or whichever port you set).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# API's
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+GET /api/v1/todo - Fetch all todos
+POST /api/v1/todo - Create a new todo
+PUT /api/v1/todo/:id - Updates a todo by ID
+DELETE /api/v1/todo/:id - Delete a todo by ID
 
-### Code Splitting
+# Future Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- User authentication
+- Adding due dates for tasks
+- Adding prioritizing tasks
 
-### Analyzing the Bundle Size
+# Contact Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email: hayatoyokoi.work@gmail.com
+LinkedIn: https://www.linkedin.com/in/hayatoyokoi/
