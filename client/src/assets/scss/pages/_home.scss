@@ -24,7 +24,7 @@
   }
 
   &__left {
-    @apply flex items-center w-[calc(100%-60px)];
+    @apply relative flex items-center w-[calc(100%-60px)];
   }
 
   &__title {
@@ -67,13 +67,17 @@
       }
     }
   }
+  &__checkbox-wrapper {
+    @apply absolute -left-7 top-1/2 -translate-y-1/2 flex items-center w-6;
+  }
+
   &__checkbox {
-    @apply relative appearance-none cursor-pointer
-    before:content-[''] before:absolute before:-top-1/2 before:-left-7 before:-translate-y-1/2
-    before:w-6 before:h-6
+    @apply relative appearance-none cursor-pointer w-6 h-6
+    before:content-[''] before:absolute before:inset-0
+    before:w-full before:h-full
     before:rounded-full before:border before:border-gray-500
     before:checked:border-transparent before:checked:border-0
-    after:checked:content-[''] after:checked:absolute after:checked:-left-6 after:checked:top-[calc(50%-1px)] after:checked:-translate-y-1/2
+    after:checked:content-[''] after:checked:absolute after:checked:left-1 after:checked:top-1.5
     after:checked:w-4 after:checked:h-2
     after:checked:border-l-2 after:checked:border-b-2 after:checked:border-white after:checked:-rotate-45;
 
@@ -82,7 +86,7 @@
       opacity: 0.3;
     }
     &:hover:after {
-      @apply content-[''] absolute -left-6 top-[calc(50%-1px)] -translate-y-1/2
+      @apply content-[''] absolute left-1 top-1.5
       w-4 h-2
       border-l-2 border-b-2 border-white -rotate-45;
       opacity: 0.7;

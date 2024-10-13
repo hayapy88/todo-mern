@@ -20,14 +20,16 @@ const TaskList = ({
         todos.map((todo) => (
           <div key={todo._id} className="tasklist__item">
             <div className="tasklist__left">
-              <input
-                type="checkbox"
-                className="tasklist__checkbox"
-                checked={todo.completed}
-                onChange={() => {
-                  handleCompletedToggle(todo);
-                }}
-              />
+              <div className="tasklist__checkbox-wrapper">
+                <input
+                  type="checkbox"
+                  className="tasklist__checkbox"
+                  checked={todo.completed}
+                  onChange={() => {
+                    handleCompletedToggle(todo);
+                  }}
+                />
+              </div>
               <p
                 className={`tasklist__title ${
                   todo.completed ? "tasklist__title--completed" : ""
