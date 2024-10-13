@@ -129,7 +129,7 @@ function App() {
   // Delete a todo
   async function handleDeleteTodo(todo) {
     try {
-      const response = await axios.delete(`/api/v1/todo/${todo._id}`);
+      const response = await axios.delete(`${apiUrl}/api/v1/todo/${todo._id}`);
       handleResponse(response);
       fetchTodos();
     } catch (error) {
