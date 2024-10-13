@@ -56,7 +56,7 @@ function App() {
   async function handleCreateTodo(e) {
     e.preventDefault();
     if (!newTodoTitle) {
-      displayMessage("Please enter a title", "red");
+      displayMessage("Please enter a Todo title", "red");
       return;
     }
 

@@ -93,4 +93,8 @@
       opacity: 1;
     }
   }
+
+  &__remaining-text {
+    @apply mt-3;
+  }
 }
