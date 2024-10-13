@@ -81,16 +81,19 @@
     after:checked:w-4 after:checked:h-2
     after:checked:border-l-2 after:checked:border-b-2 after:checked:border-white after:checked:-rotate-45;
 
-    &:hover:before {
-      background-image: var.$color-main-gradient;
-      opacity: 0.3;
-    }
-    &:hover:after {
-      @apply content-[''] absolute left-1 top-1.5
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:before {
+        background-image: var.$color-main-gradient;
+        opacity: 0.3;
+      }
+      &:hover:after {
+        @apply content-[''] absolute left-1 top-1.5
       w-4 h-2
       border-l-2 border-b-2 border-white -rotate-45;
-      opacity: 0.7;
+        opacity: 0.7;
+      }
     }
+
     &:checked:before {
       background-image: var.$color-main-gradient;
       opacity: 1;
