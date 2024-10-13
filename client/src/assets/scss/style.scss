@@ -1,3 +1,7 @@
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
 // Abstracts
 @use "abstracts/variables" as vars;
 // @use "abstracts/mixins";
@@ -25,7 +29,3 @@
 // Themes
 // @use "themes/dark";
 // @use "themes/light";
-
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
