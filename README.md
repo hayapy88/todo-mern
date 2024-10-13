@@ -44,7 +44,7 @@ npm install
 ```
 
 3. Create a .env file in the server root directory with the following environment variables:
-   MONGO_URI=MongoDB-connection-string
+   MONGO_URI=MongoDB-connection-string  
    PORT=4000(or-any-port-you-prefer)
 
 4. Start the frontend and backend:
@@ -56,14 +56,14 @@ cd ../server
 npm run dev
 ```
 
-Frontend: Open http://localhost:3000 in your browser to view the frontend.
+Frontend: Open http://localhost:3000 in your browser to view the frontend.  
 Backend: The backend will be running on http://localhost:4000 (or whichever port you set).
 
 # API's
 
-GET /api/v1/todo - Fetch all todos
-POST /api/v1/todo - Create a new todo
-PUT /api/v1/todo/:id - Updates a todo by ID
+GET /api/v1/todo - Fetch all todos  
+POST /api/v1/todo - Create a new todo  
+PUT /api/v1/todo/:id - Updates a todo by ID  
 DELETE /api/v1/todo/:id - Delete a todo by ID
 
 # Future Improvements
@@ -74,5 +74,5 @@ DELETE /api/v1/todo/:id - Delete a todo by ID
 
 # Contact Information
 
-Email: hayatoyokoi.work@gmail.com
+Email: hayatoyokoi.work@gmail.com  
 LinkedIn: https://www.linkedin.com/in/hayatoyokoi/
