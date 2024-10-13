@@ -20,7 +20,7 @@ function App() {
   // Common function to handle API responses
   function handleResponse(response) {
     const todos = response.data;
-    console.log(todos);
+    // console.log(todos);
     displayMessage(todos.message, todos.status === "success" ? "green" : "red");
   }
 
@@ -43,7 +43,7 @@ function App() {
     try {
       const response = await axios.get(`${apiUrl}/api/v1/todo`);
       const todos = response.data;
-      console.log(todos);
+      // console.log(todos);
       setTodos(todos.todos);
       setIsLoading(false);
     } catch (error) {
@@ -57,6 +57,7 @@ function App() {
     e.preventDefault();
     if (!newTodoTitle) {
       displayMessage("Please enter a Todo title", "red");
+      document.getElementById("createInput").focus();
       return;
     }
 
