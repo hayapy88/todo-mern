@@ -35,10 +35,13 @@ function App() {
     }, 3000);
   }
 
+  // API URL
+  const apiUrl = process.env.API_URL;
+
   // Fetch all todos
   async function fetchTodos() {
     try {
-      const response = await axios.get("/api/v1/todo");
+      const response = await axios.get(`${apiUrl}/api/v1/todo`);
       const todos = response.data;
       console.log(todos);
       setTodos(todos.todos);
@@ -58,7 +61,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post("/api/v1/todo", {
+      const response = await axios.post(`${apiUrl}/api/v1/todo`, {
         title: newTodoTitle,
       });
       handleResponse(response);
@@ -72,7 +75,7 @@ function App() {
   // Toggle completed status
   async function handleCompletedToggle(todo) {
     try {
-      const response = await axios.put(`/api/v1/todo/${todo._id}`, {
+      const response = await axios.put(`${apiUrl}/api/v1/todo/${todo._id}`, {
         completed: !todo.completed,
       });
       handleResponse(response);
@@ -112,7 +115,7 @@ function App() {
         return displayMessage("No changes made", "red");
       }
       const response = await axios.put(
-        `/api/v1/todo/${editedTodo._id}`,
+        `${apiUrl}/api/v1/todo/${editedTodo._id}`,
         editedTodo
       );
       handleResponse(response);
