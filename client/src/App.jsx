@@ -36,7 +36,7 @@ function App() {
   }
 
   // API URL
-  const apiUrl = process.env.API_URL;
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   // Fetch all todos
   async function fetchTodos() {
