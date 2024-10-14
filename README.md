@@ -71,6 +71,7 @@ DELETE /api/v1/todo/:id - Delete a todo by ID
 - User authentication
 - Adding due dates for tasks
 - Adding prioritizing tasks
+- Enable users to change the background image
 
 # Contact Information
 
